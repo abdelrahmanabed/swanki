@@ -8,9 +8,9 @@ app.use(cors())
 const dotenv = require('dotenv');
 dotenv.config();
 const path = require('path')
-app.use(express.static(path.join(__dirname,'./client/out')))
-app.get('', (req,res) => {
-  res.sendFile(path.join(__dirname,'./client/out/index.html'))
+app.use(express.static(path.join(__dirname,'./out')))
+app.get('*', (req,res) => {
+  res.sendFile(path.join(__dirname,'./out/index.html'))
 })
 const mongoUrl = process.env.MONGO_URL;
 mongoose.connect(mongoUrl)
@@ -293,7 +293,7 @@ app.post('/login', async (req, res) => {
 });
 app.use(express.static('client/out'))
 app.get('*', (req,res) => {
-  res.sendFile(`${__dirname}/client/out/index.html`)
+  res.sendFile(`${__dirname}/out/index.html`)
 })
 
 app.listen(port || 5000, ()=>{
