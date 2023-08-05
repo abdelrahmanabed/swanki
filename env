@@ -1,3 +1,0 @@
-MONGO_URL = mongodb+srv://a3abed96:3XbmH6BnvCJ4AWnY@cluster0.hqzxo9i.mongodb.net/Swanky
-NODE_ENV=production
-PORT=5000
