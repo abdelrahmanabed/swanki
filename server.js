@@ -9,7 +9,9 @@ const dotenv = require('dotenv');
 dotenv.config();
 const path = require('path')
 app.use(express.static(path.join(__dirname,'./client/out')))
-
+app.get('', (req,res) => {
+  res.sendFile(path.join(__dirname,'./client/out/index.html'))
+})
 const mongoUrl = process.env.MONGO_URL;
 mongoose.connect(mongoUrl)
 const port = process.env.PORT ||"5000"
@@ -121,7 +123,7 @@ app.delete('/users/:userId/addresses/:index', async (req, res) => {
     }
   
     if (index < 0 || index >= user.Address.length) {
-      return res.status(404).json({ message: 'Address not found' });
+      return res.stacCtus(404).json({ message: 'Address not found' });
     }
   
     // Remove the address from the user's address list
@@ -289,8 +291,11 @@ app.post('/login', async (req, res) => {
     res.status(500).send({ message: "Internal Server Error" });
     }
 });
+app.use(express.static('client/out'))
+app.get('*', (req,res) => {
+  res.sendFile(`${__dirname}/client/out/index.html`)
+})
 
-
-app.listen(port, ()=>{
+app.listen(port || 5000, ()=>{
     console.log(`'Server ok' ${port}`)
 })

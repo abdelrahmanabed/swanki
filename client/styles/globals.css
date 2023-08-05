@@ -1,0 +1,424 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --border-radius: 20px
+}
+
+.navmenu{
+    left: -2000px;
+}
+.navmenu .mainnavdiv span {
+    color: #000;
+    transition:  0.7s;
+    display: flex;
+    align-items: center;
+    font-size: x-small;
+    
+}
+@media (max-width: 300px) {
+    .navmenu .mainnavdiv span {
+        font-size: xx-small;
+    } 
+
+  }
+
+.navmenu .mainnavdiv span.aactive {
+    background-color:#000 ;
+    color: white;
+    padding: 12px 14px;
+    font-size: small;
+}
+@media (max-width: 300px) {
+    .navmenu .mainnavdiv span.aactive {
+        font-size: xx-small;
+    } 
+
+  }
+.navmenu.active{
+    height: calc(100%);
+    width: calc(100%);
+    left:0;
+    opacity: 1;
+    position: fixed;
+    top: 0;
+}
+#burgermenu.active {
+ position: fixed;
+ width: 40px;
+ height: 40px;
+ transition: .7s;
+ 
+ background-color: #fff;
+
+}
+
+#burgermenu.active .ff{
+    position: absolute;
+    rotate: 45deg;
+    top: 50%;
+    transform: translatey(-50%);
+    left: 10px;
+    background-color: black;
+    transition: .7s;
+   }
+   #burgermenu.active .bb{
+    rotate: -45deg;
+    opacity: 0;
+    transition: 0.7s;
+   }
+  #burgermenu.active .cc{
+    top: 32%;
+    rotate: 135deg;
+    position: absolute;
+    right: 10px;
+    background-color: black;
+    transform: .7s;
+    
+
+   }
+
+body {
+    position: relative;
+}
+
+a {
+    cursor: pointer;
+}
+#register.active {
+    opacity: 1;
+    position: fixed;
+    right: 0;
+    border-radius: 12px 0 0 0;
+}
+
+
+
+#HeadFavs.active {
+    right:0px;
+    opacity: 1;
+    position: fixed;
+    border-radius: 12px 0 0 0;
+
+
+}
+#headcart {
+    right: -1000px;
+    opacity: 1;
+}
+#headcart.active {
+    right: 0px;
+    opacity: 1;
+    position: fixed;
+    border-radius: 12px 0 0 0;
+
+}
+#Login.aactive {
+ right: 0;
+ opacity: 1;
+
+}
+#Favsdiv.active {
+    right: 0;
+    opacity: 1;
+    position: fixed;
+    border-radius: 12px 0 0 0;
+
+   }
+#signinbtn.aactive{
+    background-color:#000;
+    color: white;
+}
+#signupbtn.aactive{
+    background-color:#000;
+    color: white;
+    
+}
+#cartdiv {
+    border-radius: 12px 0 0 0;
+
+}
+
+#signup.aactive{
+    right: 0;
+    opacity: 1;
+    display: block;
+}
+.subnav{
+    position: absolute;
+    left: -700px;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 4px;
+    column-gap: 4px;
+    transition:  0.7s;
+    opacity: 0;
+    width: 0;
+}
+.subnav.aactive{
+    width: 100% ;
+
+    left: 0;
+    opacity: 1;
+    
+}
+.subnav a{
+    background-color:#000;
+    width: 0;
+    height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition:  0.7s;
+    overflow: hidden;
+    position: relative;
+    border-radius: 12px;
+    margin: 4px;
+}
+.subnav.aactive a{
+    width: 120px;
+    height: 120px;
+}
+
+@media (max-width: 300px) {
+    .subnav.aactive a{
+        width: 80px;
+        height: 80px;
+    }
+  }
+.subnav a span {
+    padding: 5px;
+    color: #000;
+    font-size: small;
+    position: absolute;
+    font-weight:bold;
+    font-size: large;
+}
+
+.subnav  .allnav span{
+    padding: 10px;
+    color:#fff ;
+    font-size: xx-large;
+    position: absolute;
+    font-weight: 900;
+}
+
+
+
+.subsubnav{
+    padding:0 8px ;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    column-gap: 10px;
+    left: -700px;
+    transition:  0.7s;
+    opacity: 0;
+    width: 100%;
+}
+.subsubnav.aactive{
+    left:0 ;
+    
+    opacity: 1;
+}
+.subsubnav a{
+  background-color: white ;
+  padding: 0;
+  border-radius: 30px;
+  transition: 0.7s;
+  opacity: 0;
+    font-weight: bold;
+    font-size: x-small;
+}
+.subsubnav a:hover{
+    background-color: #00CFFF;
+    padding: 0;
+    transition: 0.7s;
+
+    opacity: 0;
+  
+  }
+.subsubnav.aactive a {
+    padding: 10px;
+    opacity: 1;
+}
+
+html, body {
+	position:relative;
+	overflow-x:hidden;
+}
+.mainnavdiv span{
+    cursor: pointer;
+}
+
+.mainnavdiv span:hover {
+    background-color: #fff;
+}
+
+/*ksfmwfiermfe*/
+
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: #ffffffc0;
+    transition: 0.4s;
+    position: relative;
+    padding: 0;
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius: 5px;
+
+}
+input[type="checkbox"]:checked {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color:#001825;
+}
+input[type="checkbox"]:checked::after{
+    content: "";
+    width: 7px;
+    height: 7px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    border-radius: 50%;
+    
+}
+#addnewaddressbutton.active{
+    background-color: black;
+    color: #00CFFF;
+
+
+}
+#addnewaddressbutton.active :first-child {
+    font-size: 120px;
+}
+#addnewaddressbutton.active :not(:first-child) {
+    opacity: 0;
+}
+.filters div > span {
+    background-color: #ffffff;
+    padding: 8px;
+    text-align: center;
+    border-radius: 50px;
+}
+.filters label{
+    width: fit-content;
+}
+.filters i {
+    transition: 0.4s;
+
+}
+.filters div {
+    margin-bottom: 2px;
+    border-radius: 12px;
+}
+.seeMore.active i {
+    rotate: 180deg;
+}
+div:has(> .seeMore) {
+    overflow: hidden;
+    transition: .5s;
+    height:127px;
+    margin-right: 0;
+    margin-left: 8px;
+}
+div:has(> .seeMore.active) {
+    height: fit-content ;
+}
+.filters label   {
+    order: 2;
+   }
+.filters label:has(input[type="checkbox"]:checked)   {
+ order: 1;
+}
+
+/*BUTTONS*/
+.fav, .favi{
+   transition: 0.5s ease; 
+}
+.fav.active {
+   
+}
+.favi.active {
+    color:#000;
+    font-size: xx-large; 
+      
+
+
+}
+
+/*---------*/
+.numrange {
+    height: fit-content;
+}
+#accnav a {
+    transition: .5s ease;
+    padding: 8px;
+}
+#accnav a.active {
+    background-color: #EFEFEF;
+    font-weight: bold;
+    border-radius: 15px;
+    padding: 8px;
+    
+}
+#accnav a.active i {
+    font-weight: bold;
+    border-radius: 50px;
+    color: #00CFFF;
+}
+#accsecheader{
+    right: -1000px;
+    z-index: 40;
+    border-radius: 15px 0 0 15px;
+}
+#accsecheader.active {
+    right: 0;
+    position: fixed;
+
+}
+#accsecbut.active i{
+color:#00CFFF ;
+}
+#addAF {
+    right: -2000px;
+}
+#addAF.active {
+    right: 0;
+}
+#itemdetcolors {
+    transform: scale(1);
+}
+#personal-information {
+}
+#comId{
+    min-height: 50vh;
+}
+#FH.active {
+   color: #00CFFF;
+}
+#HFM.active{
+    color: #00CFFF;
+}
+#ATCHB.active{
+    color: #00CFFF;
+
+}
+#ATCHM.active{
+    color: #00CFFF;
+
+}
+#paymentPage{
+    min-height: 70vh;
+}
