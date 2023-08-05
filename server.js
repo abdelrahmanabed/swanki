@@ -8,13 +8,11 @@ app.use(cors())
 const dotenv = require('dotenv');
 dotenv.config();
 const path = require('path')
-app.use(express.static(path.join(__dirname,'./out')))
-app.get('*', (req,res) => {
-  res.sendFile(path.join(__dirname,'./out/index.html'))
-})
+
+
 const mongoUrl = process.env.MONGO_URL;
 mongoose.connect(mongoUrl)
-const port = process.env.PORT ||"5000"
+const port = process.env.PORT || 8000;
 //Import item Model
 
 const ItemModel = require('./models/Items')
@@ -291,11 +289,13 @@ app.post('/login', async (req, res) => {
     res.status(500).send({ message: "Internal Server Error" });
     }
 });
-app.use(express.static('client/out'))
-app.get('*', (req,res) => {
-  res.sendFile(`${__dirname}/out/index.html`)
-})
+app.use(express.static(path.join(__dirname, 'out')));
 
-app.listen(port || 5000, ()=>{
-    console.log(`'Server ok' ${port}`)
-})
+// Serve the React app for any other route
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'out', 'index.html'));
+});
+
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}`);
+});
