@@ -16,8 +16,7 @@ dotenv.config();
 const path = require('path')
 
 
-const mongoUrl = process.env.MONGO_URL;
-mongoose.connect(mongoUrl)
+mongoose.connect("mongodb+srv://a3abed96:3XbmH6BnvCJ4AWnY@cluster0.hqzxo9i.mongodb.net/Swanky")
 const port = process.env.PORT || 10000;
 //Import item Model
 
