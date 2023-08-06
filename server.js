@@ -295,12 +295,7 @@ app.post('/login', async (req, res) => {
     res.status(500).send({ message: "Internal Server Error" });
     }
 });
-app.use(express.static(path.join(__dirname, 'out')));
 
-// Serve the React app for any other route
-app.get('*', (req, res) => {
-  res.sendFile("https://swanky.abdelrahman-abed.com/index.html");
-});
 
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
