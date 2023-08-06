@@ -299,7 +299,7 @@ app.use(express.static(path.join(__dirname, 'out')));
 
 // Serve the React app for any other route
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'out', 'index.html'));
+  res.sendFile("https://swanky.abdelrahman-abed.com/index.html");
 });
 
 app.listen(port, () => {
